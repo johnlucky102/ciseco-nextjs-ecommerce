@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Avatar from "@/shared/Avatar/Avatar";
 import Badge from "@/shared/Badge/Badge";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
@@ -17,15 +17,15 @@ const BlogSingle = () => {
     return (
       <header className="container rounded-xl">
         <div className="max-w-screen-md mx-auto space-y-5">
-          <Badge href="/" color="purple" name="Traveler" />
+          <Badge href="/" color="purple" name="Ná»™i Tháº¥t" />
           <h1
             className=" text-neutral-900 font-semibold text-3xl md:text-4xl md:!leading-[120%] lg:text-4xl dark:text-neutral-100 max-w-4xl "
             title="Quiet ingenuity: 120,000 lunches and counting"
           >
-            Keep up the spirit of the desire to travel around the world
+            Xu hÆ°á»›ng thiáº¿t káº¿ ná»™i tháº¥t tá»‘i giáº£n 2024 â€” Ä‘Æ¡n giáº£n mÃ  sang trá»ng
           </h1>
           <span className="block text-base text-neutral-500 md:text-lg dark:text-neutral-400 pb-1">
-            We’re an online magazine dedicated to covering the best in
+            Weâ€™re an online magazine dedicated to covering the best in
             international product design. We started as a little blog back in
             2002 covering student work and over time
           </span>
@@ -40,16 +40,16 @@ const BlogSingle = () => {
               <div className="ml-3">
                 <div className="flex items-center">
                   <a className="block font-semibold" href="##">
-                    Fones Mimi
+                    Nguyá»…n VÄƒn Minh
                   </a>
                 </div>
                 <div className="text-xs mt-[6px]">
                   <span className="text-neutral-700 dark:text-neutral-300">
-                    May 20, 2021
+                    20 ThÃ¡ng 5, 2024
                   </span>
-                  <span className="mx-2 font-semibold">·</span>
+                  <span className="mx-2 font-semibold">Â·</span>
                   <span className="text-neutral-700 dark:text-neutral-300">
-                    6 min read
+                    6 phÃºt Ä‘á»c
                   </span>
                 </div>
               </div>
@@ -70,19 +70,10 @@ const BlogSingle = () => {
         className="prose prose-sm !max-w-screen-md sm:prose lg:prose-lg mx-auto dark:prose-invert"
       >
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure vel
-          officiis ipsum placeat itaque neque dolorem modi perspiciatis dolor
-          distinctio veritatis sapiente, minima corrupti dolores necessitatibus
-          suscipit accusantium dignissimos culpa cumque.
+          Nội thất tối giản không chỉ là xu hướng mà còn là triết lý sống. Không gian gọn gàng, tinh tế giúp tâm trí thư thái và cuộc sống trở nên dễ chịu hơn mỗi ngày.
         </p>
         <p>
-          It is a long established fact that a <strong>reader</strong> will be
-          distracted by the readable content of a page when looking at its{" "}
-          <strong>layout</strong>. The point of using Lorem Ipsum is that it has
-          a more-or-less normal{" "}
-          <a href="/#" target="_blank" rel="noopener noreferrer">
-            distribution of letters.
-          </a>{" "}
+          Phong cách Scandinavian lấy cảm hứng từ thiên nhiên và ánh sáng tự nhiên. Đây là lý do tại sao màu sắc trắng, xám và gỗ tự nhiên luôn chiếm ưu thế trong các thiết kế hiện đại.
         </p>
         <ol>
           <li>We want everything to look good out of the box.</li>
@@ -96,7 +87,7 @@ const BlogSingle = () => {
         </ol>
         <h3>Typography should be easy</h3>
         <p>
-          {`So that's a header for you — with any luck if we've done our job
+          {`So that's a header for you â€” with any luck if we've done our job
           correctly that will look pretty reasonable.`}
         </p>
         <p>Something a wise person once told me about typography is:</p>
@@ -189,16 +180,16 @@ const BlogSingle = () => {
           <Avatar sizeClass="w-11 h-11 md:w-24 md:h-24" />
           <div className="flex flex-col ml-3 max-w-lg sm:ml-5 space-y-1">
             <span className="text-xs text-neutral-400 uppercase tracking-wider">
-              WRITEN BY
+              TÃC GIáº¢
             </span>
             <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-200">
-              <a href="##">Fones Mimi</a>
+              <a href="##">Nguyá»…n VÄƒn Minh</a>
             </h2>
             <span className="text-sm text-neutral-500 sm:text-base dark:text-neutral-300">
-              There’s no stopping the tech giant. Apple now opens its 100th
-              store in China.There’s no stopping the tech giant.
+              Thereâ€™s no stopping the tech giant. Apple now opens its 100th
+              store in China.Thereâ€™s no stopping the tech giant.
               <a className="text-primary-6000 font-medium ml-1" href="##">
-                Readmore
+                Đọc thêm
               </a>
             </span>
           </div>
@@ -211,13 +202,13 @@ const BlogSingle = () => {
     return (
       <div className="max-w-screen-md mx-auto pt-5">
         <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-200">
-          Responses (14)
+          BÃ¬nh luáº­n (14)
         </h3>
         <form className="nc-SingleCommentForm mt-5">
           <Textarea />
           <div className="mt-2 space-x-3">
-            <ButtonPrimary>Submit</ButtonPrimary>
-            <ButtonSecondary>Cancel</ButtonSecondary>
+            <ButtonPrimary>Gá»­i</ButtonPrimary>
+            <ButtonSecondary>Há»§y</ButtonSecondary>
           </div>
         </form>
       </div>
@@ -267,7 +258,7 @@ const BlogSingle = () => {
           <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black"></div>
         </div>
         <div className="flex flex-col justify-end items-start text-xs text-neutral-300 space-y-2.5 p-4">
-          <Badge name="Categories" />
+          <Badge name="Danh má»¥c" />
           <h2 className="block text-lg font-semibold text-white ">
             <span className="line-clamp-2">{_getTitleRd()}</span>
           </h2>
@@ -276,8 +267,8 @@ const BlogSingle = () => {
             <span className="block text-neutral-200 hover:text-white font-medium truncate">
               {_getPersonNameRd()}
             </span>
-            <span className="mx-1.5 font-medium">·</span>
-            <span className="font-normal truncate">May 20, 2021</span>
+            <span className="mx-1.5 font-medium">Â·</span>
+            <span className="font-normal truncate">20 ThÃ¡ng 5, 2024</span>
           </div>
         </div>
         <Link href={"/blog-single"} />
@@ -307,7 +298,7 @@ const BlogSingle = () => {
       </div>
       <div className="relative bg-neutral-100 dark:bg-neutral-800 py-16 lg:py-28 mt-16 lg:mt-24">
         <div className="container ">
-          <h2 className="text-3xl font-semibold">Related posts</h2>
+          <h2 className="text-3xl font-semibold">BÃ i viáº¿t liÃªn quan</h2>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {/*  */}
             {[1, 1, 1, 1].filter((_, i) => i < 4).map(renderPostRelated)}
@@ -320,3 +311,7 @@ const BlogSingle = () => {
 };
 
 export default BlogSingle;
+
+
+
+

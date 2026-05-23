@@ -2,30 +2,59 @@
 
 import { Popover, Transition } from "@/app/headlessui";
 import Prices from "@/components/Prices";
-import { Product, PRODUCTS } from "@/data/data";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
-import Image from "next/image";
 import Link from "next/link";
+import { createClient } from "@/lib/supabase/client";
+
+type CartItem = any;
 
 export default function CartDropdown() {
-  const renderProduct = (item: Product, index: number, close: () => void) => {
-    const { name, price, image } = item;
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const supabase = createClient();
+
+  useEffect(() => {
+    async function loadCart() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      const { data: cartData } = await supabase
+        .from('carts')
+        .select(`
+          cart_items(
+            *,
+            variant:product_variants(
+              id, price, color,
+              product:products(id, name, slug),
+              product_images:products(product_images(image_url, is_primary))
+            )
+          )
+        `)
+        .eq('user_id', user.id)
+        .single();
+
+      setCartItems(cartData?.cart_items || []);
+    }
+
+    loadCart();
+  }, [supabase]);
+
+  const renderProduct = (item: CartItem, index: number, close: () => void) => {
+    const variant = item.variant;
+    const product = variant?.product;
+    const name = product?.name || "Sản phẩm";
+    const price = variant?.price || 0;
+    const slug = product?.slug || "";
+    const productHref = `/product-detail/${slug}` as any;
+
     return (
       <div key={index} className="flex py-5 last:pb-0">
         <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100">
-          <Image
-            fill
-            src={image}
-            alt={name}
-            className="h-full w-full object-contain object-center"
-          />
-          <Link
-            onClick={close}
-            className="absolute inset-0"
-            href={"/product-detail"}
-          />
+          <Link onClick={close} className="absolute inset-0" href={productHref} />
+          <div className="h-full w-full bg-slate-200 flex items-center justify-center text-xs text-slate-400">
+            {name.charAt(0)}
+          </div>
         </div>
 
         <div className="ml-4 flex flex-1 flex-col">
@@ -33,35 +62,30 @@ export default function CartDropdown() {
             <div className="flex justify-between ">
               <div>
                 <h3 className="text-base font-medium ">
-                  <Link onClick={close} href={"/product-detail"}>
+                  <Link onClick={close} href={productHref}>
                     {name}
                   </Link>
                 </h3>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                  <span>{`Natural`}</span>
-                  <span className="mx-2 border-l border-slate-200 dark:border-slate-700 h-4"></span>
-                  <span>{"XL"}</span>
-                </p>
+                {variant?.color && (
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    {variant.color}
+                  </p>
+                )}
               </div>
               <Prices price={price} className="mt-0.5" />
             </div>
           </div>
           <div className="flex flex-1 items-end justify-between text-sm">
-            <p className="text-gray-500 dark:text-slate-400">{`Qty 1`}</p>
-
-            <div className="flex">
-              <button
-                type="button"
-                className="font-medium text-primary-6000 dark:text-primary-500 "
-              >
-                Remove
-              </button>
-            </div>
+            <p className="text-gray-500 dark:text-slate-400">SL: {item.quantity}</p>
           </div>
         </div>
       </div>
     );
   };
+
+  const subtotal = cartItems.reduce((sum: number, item: CartItem) =>
+    sum + (item.variant?.price || 0) * item.quantity, 0
+  );
 
   return (
     <Popover className="relative">
@@ -72,9 +96,11 @@ export default function CartDropdown() {
                 ${open ? "" : "text-opacity-90"}
                  group w-10 h-10 sm:w-12 sm:h-12 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 relative`}
           >
-            <div className="w-3.5 h-3.5 flex items-center justify-center bg-primary-500 absolute top-1.5 right-1.5 rounded-full text-[10px] leading-none text-white font-medium">
-              <span className="mt-[1px]">3</span>
-            </div>
+            {cartItems.length > 0 && (
+              <div className="w-3.5 h-3.5 flex items-center justify-center bg-primary-500 absolute top-1.5 right-1.5 rounded-full text-[10px] leading-none text-white font-medium">
+                <span className="mt-[1px]">{cartItems.length}</span>
+              </div>
+            )}
             <svg
               className="w-6 h-6"
               viewBox="0 0 24 24"
@@ -130,22 +156,24 @@ export default function CartDropdown() {
               <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5 dark:ring-white/10">
                 <div className="relative bg-white dark:bg-neutral-800">
                   <div className="max-h-[60vh] p-5 overflow-y-auto hiddenScrollbar">
-                    <h3 className="text-xl font-semibold">Shopping cart</h3>
+                    <h3 className="text-xl font-semibold">Giỏ hàng</h3>
                     <div className="divide-y divide-slate-100 dark:divide-slate-700">
-                      {[PRODUCTS[0], PRODUCTS[1], PRODUCTS[2]].map(
-                        (item, index) => renderProduct(item, index, close)
+                      {cartItems.length === 0 ? (
+                        <p className="text-sm text-slate-500 py-4">Giỏ hàng của bạn đang trống</p>
+                      ) : (
+                        cartItems.map((item, index) => renderProduct(item, index, close))
                       )}
                     </div>
                   </div>
                   <div className="bg-neutral-50 dark:bg-slate-900 p-5">
                     <p className="flex justify-between font-semibold text-slate-900 dark:text-slate-100">
                       <span>
-                        <span>Subtotal</span>
+                        <span>Tạm tính</span>
                         <span className="block text-sm text-slate-500 dark:text-slate-400 font-normal">
-                          Shipping and taxes calculated at checkout.
+                          Phí vận chuyển tính ở bước thanh toán.
                         </span>
                       </span>
-                      <span className="">$299.00</span>
+                      <span className="">{subtotal.toLocaleString('vi-VN')} VND</span>
                     </p>
                     <div className="flex space-x-2 mt-5">
                       <ButtonSecondary
@@ -153,14 +181,14 @@ export default function CartDropdown() {
                         className="flex-1 border border-slate-200 dark:border-slate-700"
                         onClick={close}
                       >
-                        View cart
+                        Xem giỏ hàng
                       </ButtonSecondary>
                       <ButtonPrimary
                         href="/checkout"
                         onClick={close}
                         className="flex-1"
                       >
-                        Check out
+                        Thanh toán
                       </ButtonPrimary>
                     </div>
                   </div>

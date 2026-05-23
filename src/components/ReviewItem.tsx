@@ -16,10 +16,10 @@ export interface ReviewItemProps {
 }
 
 const DEMO_DATA: ReviewItemDataType = {
-  name: "Cody Fisher",
-  date: "May 20, 2021",
+  name: "Nguyễn Văn An",
+  date: "20 Tháng 5, 2024",
   comment:
-    "Very nice feeling sweater. I like it better than a regular hoody because it is tailored to be a slimmer fit. Perfect for going out when you want to stay comfy. The head opening is a little tight which makes it a little.",
+    "Sản phẩm rất đẹp và chất lượng tốt. Gia đình tôi rất hài lòng với chiếc ghế sofa này, thiết kế hiện đại và phù hợp với không gian phòng khách nhà tôi.",
   starPoint: 5,
 };
 

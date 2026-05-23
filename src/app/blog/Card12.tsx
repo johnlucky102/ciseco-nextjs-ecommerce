@@ -41,9 +41,7 @@ const Card12: FC<Card12Props> = ({ className = "h-full" }) => {
         </h2>
         <span className="hidden sm:block mt-4 text-neutral-500 dark:text-neutral-400">
           <span className="line-clamp-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-            vero perspiciatis ullam ea? Nihil accusamus similique debitis
-            tempore mollitia? Aperiam.
+            Khám phá xu hướng nội thất 2024 với những thiết kế độc đáo, giản dị mà vẫn sang trọng. Nâng tầm không gian sống của bạn với những gợi ý từng bước.
           </span>
         </span>
         <PostCardMeta className="mt-5" />

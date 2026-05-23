@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import "@/fonts/line-awesome-1.3.0/css/line-awesome.css";
 import "@/styles/index.scss";
@@ -13,20 +14,24 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: any;
 }) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || "";
+  const isAdmin = pathname.startsWith("/admin");
+
   return (
     <html lang="en" dir="" className={poppins.className}>
       <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
-        <SiteHeader />
+        {!isAdmin && <SiteHeader />}
         {children}
-        <CommonClient />
-        <Footer />
+        {!isAdmin && <CommonClient />}
+        {!isAdmin && <Footer />}
       </body>
     </html>
   );

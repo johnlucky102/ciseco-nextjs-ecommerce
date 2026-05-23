@@ -23,13 +23,11 @@ const Comment: FC<CommentProps> = ({ isSmall }) => {
           </a>
           <span className="mx-2">·</span>
           <span className="text-neutral-500 dark:text-neutral-400 text-xs line-clamp-1 sm:text-sm">
-            May 20, 2021
+            20 Tháng 5, 2024
           </span>
         </div>
         <span className="block text-neutral-700 mt-2 mb-3 sm:mt-3 sm:mb-4 dark:text-neutral-300">
-          In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at,
-          feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend
-          quam a odio. In hac habitasse platea dictumst.
+          Sản phẩm rất đẹp, chất lượng tốt. Tôi đã mua bộ bàn ghế phong cách Scandinavian và rất hài lòng. Sẽ quay lại mua tiếp!
         </span>
         <div>
           <button
@@ -51,7 +49,7 @@ const Comment: FC<CommentProps> = ({ isSmall }) => {
               ></path>
             </svg>
             <span className="text-xs leading-none text-neutral-900 dark:text-neutral-200">
-              Reply
+              Trả lời
             </span>
           </button>
         </div>

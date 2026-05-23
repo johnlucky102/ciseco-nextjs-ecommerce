@@ -20,26 +20,26 @@ export interface CardCategoryData {
 }
 const CATS: CardCategoryData[] = [
   {
-    name: "Travel Kits",
-    desc: "20+ categories",
+    name: "Phòng Khách",
+    desc: "20+ sản phẩm",
     img: department1Png,
     color: "bg-indigo-100",
   },
   {
-    name: "Beauty Products",
-    desc: "10+ categories",
+    name: "Phòng Ngủ",
+    desc: "10+ sản phẩm",
     img: department2Png,
     color: "bg-slate-100",
   },
   {
-    name: "Sport Kits",
-    desc: "34+ categories",
+    name: "Phòng Ăn",
+    desc: "34+ sản phẩm",
     img: department3Png,
     color: "bg-sky-100",
   },
   {
-    name: "Pets Food",
-    desc: "12+ categories",
+    name: "Trang Trí",
+    desc: "12+ sản phẩm",
     img: department4Png,
     color: "bg-orange-100",
   },
@@ -50,17 +50,31 @@ export interface SectionSliderCategoriesProps {
   heading?: string;
   subHeading?: string;
   data?: CardCategoryData[];
+  categories?: {
+    id: string;
+    name: string;
+    slug: string;
+    image_url?: string | null;
+  }[];
 }
 
 const SectionSliderCategories: FC<SectionSliderCategoriesProps> = ({
-  heading = "Shop by department",
+  heading = "Mua Sắm Theo Danh Mục",
   subHeading = "",
   className = "",
   itemClassName = "",
   data = CATS,
+  categories,
 }) => {
   const sliderRef = useRef(null);
   const [isShow, setIsShow] = useState(false);
+  const sliderData =
+    categories?.map((category) => ({
+      name: category.name,
+      desc: "Bộ sưu tập nội thất",
+      img: category.image_url || department1Png,
+      color: "bg-orange-50",
+    })) || data;
 
   useEffect(() => {
     const OPTIONS: Partial<Glide.Options> = {
@@ -108,7 +122,7 @@ const SectionSliderCategories: FC<SectionSliderCategoriesProps> = ({
         </Heading>
         <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
-            {data.map((item, index) => (
+            {sliderData.map((item, index) => (
               <li key={index} className={`glide__slide ${itemClassName}`}>
                 <CardCategory2
                   featuredImage={item.img}
@@ -126,7 +140,7 @@ const SectionSliderCategories: FC<SectionSliderCategoriesProps> = ({
                   <div className="absolute inset-y-6 inset-x-10 flex flex-col sm:items-center justify-center">
                     <div className="flex relative text-slate-900">
                       <span className="text-lg font-semibold ">
-                        More collections
+                        Xem thêm
                       </span>
                       <svg
                         className="absolute left-full w-5 h-5 ml-2 rotate-45 group-hover:scale-110 transition-transform"
@@ -153,7 +167,7 @@ const SectionSliderCategories: FC<SectionSliderCategoriesProps> = ({
                       </svg>
                     </div>
                     <span className="text-sm mt-1 text-slate-800">
-                      Show me more
+                      Khám phá ngay
                     </span>
                   </div>
                 </div>

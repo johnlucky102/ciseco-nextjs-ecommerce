@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+﻿import React, { FC } from "react";
 import Heading from "@/components/Heading/Heading";
 
 export interface Statistic {
@@ -10,20 +10,20 @@ export interface Statistic {
 const FOUNDER_DEMO: Statistic[] = [
   {
     id: "1",
-    heading: "10 million",
+    heading: "10.000+",
     subHeading:
-      "Articles have been public around the world (as of Sept. 30, 2021)",
+      "Sáº£n pháº©m ná»™i tháº¥t Ä‘Ã£ Ä‘Æ°á»£c bÃ¡n ra toÃ n quá»‘c",
   },
   {
     id: "2",
-    heading: "100,000",
-    subHeading: "Registered users account (as of Sept. 30, 2021)",
+    heading: "50.000+",
+    subHeading: "KhÃ¡ch hÃ ng hÃ i lÃ²ng tin dÃ¹ng Furzose",
   },
   {
     id: "3",
-    heading: "220+",
+    heading: "63",
     subHeading:
-      "Countries and regions have our presence (as of Sept. 30, 2021)",
+      "Tá»‰nh thÃ nh trÃªn toÃ n quá»‘c Ä‘Ã£ cÃ³ máº·t sáº£n pháº©m Furzose",
   },
 ];
 
@@ -35,10 +35,9 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
   return (
     <div className={`nc-SectionStatistic relative ${className}`}>
       <Heading
-        desc=" We’re impartial and independent, and every day we create distinctive,
-          world-class programmes and content"
+        desc="Những con số nói lên sự phát triển vượt bậc của Furzose"
       >
-        🚀 Fast Facts
+        🚀 Con Số Nổi Bật
       </Heading>
       <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 xl:gap-8">
         {FOUNDER_DEMO.map((item) => (
@@ -60,3 +59,5 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
 };
 
 export default SectionStatistic;
+
+

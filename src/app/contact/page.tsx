@@ -9,16 +9,16 @@ import SectionPromo1 from "@/components/SectionPromo1";
 
 const info = [
   {
-    title: "🗺 ADDRESS",
-    desc: "Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter",
+    title: "🗺 ĐỊA CHỈ",
+    desc: "123 Đường Lê Lợi, Quận 1, TP. Hồ Chí Minh",
   },
   {
     title: "💌 EMAIL",
-    desc: "nc.example@example.com",
+    desc: "support@furzose.vn",
   },
   {
-    title: "☎ PHONE",
-    desc: "000-123-456-7890",
+    title: "☎ ĐIỆN THOẠI",
+    desc: "028-1234-5678",
   },
 ];
 
@@ -27,7 +27,7 @@ const PageContact = ({}) => {
     <div className={`nc-PageContact overflow-hidden`}>
       <div className="">
         <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Contact
+          Liên Hệ
         </h2>
         <div className="container max-w-7xl mx-auto">
           <div className="flex-shrink-0 grid grid-cols-1 md:grid-cols-2 gap-12 ">
@@ -44,7 +44,7 @@ const PageContact = ({}) => {
               ))}
               <div>
                 <h3 className="uppercase font-semibold text-sm dark:text-neutral-200 tracking-wider">
-                  🌏 SOCIALS
+                  🌏 MẠNG XÃ HỘI
                 </h3>
                 <SocialsList className="mt-2" />
               </div>
@@ -52,16 +52,16 @@ const PageContact = ({}) => {
             <div>
               <form className="grid grid-cols-1 gap-6" action="#" method="post">
                 <label className="block">
-                  <Label>Full name</Label>
+                  <Label>Họ và tên</Label>
 
                   <Input
-                    placeholder="Example Doe"
+                    placeholder="Nguyễn Văn A"
                     type="text"
                     className="mt-1"
                   />
                 </label>
                 <label className="block">
-                  <Label>Email address</Label>
+                  <Label>Địa chỉ email</Label>
 
                   <Input
                     type="email"
@@ -70,12 +70,12 @@ const PageContact = ({}) => {
                   />
                 </label>
                 <label className="block">
-                  <Label>Message</Label>
+                  <Label>Nội dung</Label>
 
                   <Textarea className="mt-1" rows={6} />
                 </label>
                 <div>
-                  <ButtonPrimary type="submit">Send Message</ButtonPrimary>
+                  <ButtonPrimary type="submit">Gửi tin nhắn</ButtonPrimary>
                 </div>
               </form>
             </div>

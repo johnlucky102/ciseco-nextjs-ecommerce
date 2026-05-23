@@ -15,8 +15,8 @@ const WidgetPosts: FC<WidgetPostsProps> = ({
       data-nc-id="WidgetPosts"
     >
       <WidgetHeading1
-        title="🎯 Popular Posts"
-        viewAll={{ label: "View all", href: "/#" }}
+        title="🎯 Bài Viết Phổ Biến"
+        viewAll={{ label: "Xem thêm", href: "/#" }}
       />
       <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-700">
         {[1, 1, 1, 1, 1, 1].map((_, index) => (

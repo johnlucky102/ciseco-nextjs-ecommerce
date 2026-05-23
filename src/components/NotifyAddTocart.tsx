@@ -51,14 +51,14 @@ const NotifyAddTocart: FC<Props> = ({
             </div>
           </div>
           <div className="flex flex-1 items-end justify-between text-sm">
-            <p className="text-gray-500 dark:text-slate-400">{`Qty ${qualitySelected}`}</p>
+            <p className="text-gray-500 dark:text-slate-400">{`Số lượng: ${qualitySelected}`}</p>
 
             <div className="flex">
               <button
                 type="button"
                 className="font-medium text-primary-6000 dark:text-primary-500 "
               >
-                View cart
+                Xem giỏ hàng
               </button>
             </div>
           </div>
@@ -80,7 +80,7 @@ const NotifyAddTocart: FC<Props> = ({
       leaveTo="opacity-0 translate-x-20"
     >
       <p className="block text-base font-semibold leading-none">
-        Added to cart!
+  Đã thêm vào giỏ hàng!
       </p>
       <hr className=" border-slate-200 dark:border-slate-700 my-4" />
       {renderProductCartOnNotify()}

@@ -1,20 +1,20 @@
 export const DEMO_DATA = [
   {
     id: 1,
-    clientName: "Tiana Abie",
+    clientName: "Nguyễn Thị Lan",
     content:
-      "Great quality products, affordable prices, fast and friendly delivery. I very recommend.",
+      "Sản phẩm chất lượng cao, giá cả hợp lý, giao hàng nhanh và thân thiện. Tôi rất hài lòng và sẽ giới thiệu cho bạn bè.",
   },
   {
     id: 2,
-    clientName: "Lennie Swiffan",
+    clientName: "Trần Văn Minh",
     content:
-      "Great quality products, affordable prices, fast and friendly delivery. I very recommend.",
+      "Nội thất đẹp, bền, và rất đúng như mô tả. Phòng khách nhà tôi trông tuyệt vời hơn nhiều sau khi mua sofa tại đây.",
   },
   {
     id: 3,
-    clientName: "Berta Emili",
+    clientName: "Phạm Thị Huệ",
     content:
-      "Great quality products, affordable prices, fast and friendly delivery. I very recommend.",
+      "Dịch vụ chăm sóc khách hàng rất tốt, nhân viên nhiệt tình hỗ trợ. Sản phẩm đến tay đúng hẹn và đóng gói cẩn thận.",
   },
 ];

@@ -32,8 +32,7 @@ const Card3: FC<Card3Props> = ({ className = "h-full" }) => {
             </h2>
             <div className="hidden sm:block sm:mt-2">
               <span className="text-neutral-500 dark:text-neutral-400 text-base line-clamp-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur, culpa?
+                Khám phá xu hướng nội thất mới nhất và cách trang trí không gian sống hiệu quả.
               </span>
             </div>
           </div>

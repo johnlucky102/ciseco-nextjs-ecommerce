@@ -4,8 +4,7 @@ import React, { FC, useEffect, useId, useRef, useState } from "react";
 import Heading from "@/components/Heading/Heading";
 // @ts-ignore
 import Glide from "@glidejs/glide/dist/glide.esm";
-import ProductCard from "./ProductCard";
-import { Product, PRODUCTS } from "@/data/data";
+import ProductCard, { SupabaseProduct } from "./ProductCard";
 
 export interface SectionSliderProductCardProps {
   className?: string;
@@ -14,7 +13,7 @@ export interface SectionSliderProductCardProps {
   headingFontClassName?: string;
   headingClassName?: string;
   subHeading?: string;
-  data?: Product[];
+  data?: SupabaseProduct[];
 }
 
 const SectionSliderProductCard: FC<SectionSliderProductCardProps> = ({
@@ -23,8 +22,8 @@ const SectionSliderProductCard: FC<SectionSliderProductCardProps> = ({
   headingFontClassName,
   headingClassName,
   heading,
-  subHeading = "REY backpacks & bags",
-  data = PRODUCTS.filter((_, i) => i < 8 && i > 2),
+  subHeading = "Khám phá bộ sưu tập nội thất",
+  data = [],
 }) => {
   const sliderRef = useRef(null);
 

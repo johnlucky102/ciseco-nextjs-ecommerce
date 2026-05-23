@@ -23,12 +23,11 @@ const Card13: FC<Card13Props> = ({ className = "" }) => {
         </h2>
         <span className="hidden sm:block my-3 text-slate-500 dark:text-slate-400 ">
           <span className="line-clamp-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            dolorem voluptatibus numquam ut pariatur officiis?
+            Bí quyết chọn nội thất phòng ngủ vừa tiết kiệm chi phí vừa đảm bảo thẩm mỹ cho không gian nghỉ ngơi.
           </span>
         </span>
         <span className="mt-4 block sm:hidden text-sm text-slate-500 ">
-          May 20, 2021 · 2 min read
+          20 Tháng 5, 2024 · 2 phút đọc
         </span>
         <div className="mt-auto hidden sm:block">
           <PostCardMeta />

@@ -6,45 +6,33 @@ import { FC } from "react";
 
 const DEMO_DATA = [
   {
-    name: "Description",
+    name: "Mô tả",
     content:
-      "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
+      "Nội thất Furzose được thiết kế tinh tế, kết hợp giữa thẩm mỹ hiện đại và tính bền vững cao, mang lại không gian sống thoải mái và đẳng cấp cho mọi ngôi nhà.",
   },
   {
-    name: "Fabric + Care",
+    name: "Chất liệu & Bảo quản",
     content: `<ul class="list-disc list-inside leading-7">
-    <li>Made from a sheer Belgian power micromesh.</li>
-    <li>
-    74% Polyamide (Nylon) 26% Elastane (Spandex)
-    </li>
-    <li>
-    Adjustable hook & eye closure and straps
-    </li>
-    <li>
-    Hand wash in cold water, dry flat
-    </li>
+    <li>Chất liệu gỗ sồi tự nhiên, bền đẹp theo thời gian.</li>
+    <li>Lớp phủ bề mặt chống trầy xước và chống thấm ẩm.</li>
+    <li>Làm sạch bằng khăn khô hoặc vải ẩm mềm.</li>
+    <li>Tránh để tiếp xúc trực tiếp với ánh nắng mặt trời kéo dài.</li>
   </ul>`,
   },
 
   {
-    name: "How it Fits",
+    name: "Kích thước",
     content:
-      "Use this as a guide. Preference is a huge factor — if you're near the top of a size range and/or prefer more coverage, you may want to size up.",
+      "Vui lòng tham khảo bảng kích thước sản phẩm trước khi đặt hàng. Liên hệ chúng tôi nếu bạn cần tư vấn về kích thước phù hợp với không gian nhà bạn.",
   },
   {
-    name: "FAQ",
+    name: "Câu hỏi thường gặp",
     content: `
     <ul class="list-disc list-inside leading-7">
-    <li>All full-priced, unworn items, with tags attached and in their original packaging are eligible for return or exchange within 30 days of placing your order.</li>
-    <li>
-    Please note, packs must be returned in full. We do not accept partial returns of packs.
-    </li>
-    <li>
-    Want to know our full returns policies? Here you go.
-    </li>
-    <li>
-    Want more info about shipping, materials or care instructions? Here!
-    </li>
+    <li>Sản phẩm ngược hàng trong vòng 30 ngày nếu còn nguyên tem mác và đóng gói ban đầu.</li>
+    <li>Chúng tôi hỗ trợ đổi trả miễn phí nếu sản phẩm bị lỗi sản xuất.</li>
+    <li>Xem chính sách đổi trả đầy đủ tại trang chính sách của chúng tôi.</li>
+    <li>Liên hệ hỗ trợ: support@furzose.vn</li>
   </ul>
     `,
   },

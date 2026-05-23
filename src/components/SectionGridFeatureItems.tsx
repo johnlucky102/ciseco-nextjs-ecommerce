@@ -1,24 +1,26 @@
 import React, { FC } from "react";
 import HeaderFilterSection from "@/components/HeaderFilterSection";
-import ProductCard from "@/components/ProductCard";
+import ProductCard, { SupabaseProduct } from "@/components/ProductCard";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
-import { Product, PRODUCTS } from "@/data/data";
 
 //
 export interface SectionGridFeatureItemsProps {
-  data?: Product[];
+  data?: SupabaseProduct[];
+  products?: SupabaseProduct[];
 }
 
 const SectionGridFeatureItems: FC<SectionGridFeatureItemsProps> = ({
-  data = PRODUCTS,
+  data,
+  products,
 }) => {
+  const items = data || products || [];
   return (
     <div className="nc-SectionGridFeatureItems relative">
       <HeaderFilterSection />
       <div
         className={`grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 `}
       >
-        {data.map((item, index) => (
+        {items.map((item, index) => (
           <ProductCard data={item} key={index} />
         ))}
       </div>

@@ -8,10 +8,10 @@ const PageForgotPass = ({}) => {
     <div className="container mb-24 lg:mb-32">
       <header className="text-center max-w-2xl mx-auto - mb-14 sm:mb-16 lg:mb-20">
         <h2 className="mt-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Forgot password
+          Quên mật khẩu
         </h2>
         <span className="block text-sm mt-4 text-neutral-700 sm:text-base dark:text-neutral-200">
-          Welcome to our Community
+          Nhập email để nhận liên kết đặt lại mật khẩu
         </span>
       </header>
 
@@ -20,7 +20,7 @@ const PageForgotPass = ({}) => {
         <form className="grid grid-cols-1 gap-6" action="#" method="post">
           <label className="block">
             <span className="text-neutral-800 dark:text-neutral-200">
-              Email address
+              Địa chỉ email
             </span>
             <Input
               type="email"
@@ -28,18 +28,18 @@ const PageForgotPass = ({}) => {
               className="mt-1"
             />
           </label>
-          <ButtonPrimary type="submit">Continue</ButtonPrimary>
+          <ButtonPrimary type="submit">Tiếp tục</ButtonPrimary>
         </form>
 
         {/* ==== */}
         <span className="block text-center text-neutral-700 dark:text-neutral-300">
-          Go back for {` `}
+          Quay lại {` `}
           <Link href="/login" className="text-green-600">
-            Sign in
+            Đăng nhập
           </Link>
           {` / `}
           <Link href="/signup" className="text-green-600">
-            Sign up
+            Đăng ký
           </Link>
         </span>
       </div>

@@ -33,7 +33,7 @@ const PostCardMeta: FC<PostCardMetaProps> = ({
           ·
         </span>
         <span className="text-neutral-500 dark:text-neutral-400 font-normal line-clamp-1">
-          May 20, 2021
+          20 Tháng 5, 2021
         </span>
       </>
     </div>

@@ -27,29 +27,28 @@ const SectionPromo3: FC<SectionPromo3Props> = ({ className = "lg:pt-10" }) => {
 
         <div className="lg:w-[50%] max-w-lg relative">
           <h2 className="font-semibold text-4xl md:text-5xl">
-            {`Don't miss out on special offers`}
+            {`Đừng bỏ lỡ những ưu đãi đặc biệt`}
           </h2>
           <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-            Register to receive news about the latest, savings combos, discount
-            codes...
+            Đăng ký nhận tin tức về sản phẩm mới nhất, combo tiết kiệm, mã giảm giá...
           </span>
           <ul className="space-y-4 mt-10">
             <li className="flex items-center space-x-4">
               <Badge color="purple" name="01" />
               <span className="font-medium text-neutral-700 dark:text-neutral-300">
-                Savings combos
+                Combo tiết kiệm
               </span>
             </li>
             <li className="flex items-center space-x-4">
               <Badge name="02" />
               <span className="font-medium text-neutral-700 dark:text-neutral-300">
-                Freeship
+                Miễn phí vận chuyển
               </span>
             </li>
             <li className="flex items-center space-x-4">
               <Badge color="red" name="03" />
               <span className="font-medium text-neutral-700 dark:text-neutral-300">
-                Premium magazines
+                Tạp chí nội thất
               </span>
             </li>
           </ul>
@@ -57,7 +56,7 @@ const SectionPromo3: FC<SectionPromo3Props> = ({ className = "lg:pt-10" }) => {
             <Input
               required
               aria-required
-              placeholder="Enter your email"
+              placeholder="Nhập email của bạn"
               type="email"
               rounded="rounded-full"
             />

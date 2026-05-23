@@ -1,27 +1,77 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 export interface LikeButtonProps {
   className?: string;
   liked?: boolean;
+  variantId?: string;
 }
 
 const LikeButton: React.FC<LikeButtonProps> = ({
   className = "",
   liked = false,
+  variantId,
 }) => {
   const [isLiked, setIsLiked] = useState(liked);
+  const [loading, setLoading] = useState(false);
+  const supabase = createClient();
 
-  // make random for demo
   useEffect(() => {
-    setIsLiked(Math.random() > 0.5);
-  }, []);
+    if (!variantId) return;
+    let cancelled = false;
+    async function checkWishlist() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user || cancelled) return;
+      const { data } = await supabase
+        .from("wishlists")
+        .select("id")
+        .eq("user_id", user.id)
+        .eq("variant_id", variantId!)
+        .maybeSingle();
+      if (!cancelled) setIsLiked(!!data);
+    }
+    checkWishlist();
+    return () => { cancelled = true; };
+  }, [variantId, supabase]);
+
+  const handleToggle = useCallback(async () => {
+    if (loading) return;
+    if (!variantId) {
+      setIsLiked((v) => !v);
+      return;
+    }
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      setIsLiked((v) => !v);
+      return;
+    }
+    setLoading(true);
+    if (isLiked) {
+      await supabase
+        .from("wishlists")
+        .delete()
+        .eq("user_id", user.id)
+        .eq("variant_id", variantId);
+    } else {
+      await supabase
+        .from("wishlists")
+        .insert({ user_id: user.id, variant_id: variantId });
+    }
+    setIsLiked((v) => !v);
+    setLoading(false);
+  }, [isLiked, loading, variantId, supabase]);
 
   return (
     <button
       className={`w-9 h-9 flex items-center justify-center rounded-full bg-white dark:bg-slate-900 text-neutral-700 dark:text-slate-200 nc-shadow-lg ${className}`}
-      onClick={() => setIsLiked(!isLiked)}
+      onClick={handleToggle}
+      disabled={loading}
     >
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
         <path

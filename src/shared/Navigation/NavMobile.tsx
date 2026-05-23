@@ -153,7 +153,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
           {renderMagnifyingGlassIcon()}
           <input
             type="search"
-            placeholder="Type and press enter"
+            placeholder="Tìm kiếm..."
             className="border-none bg-transparent focus:outline-none focus:ring-0 w-full text-sm "
           />
         </div>
@@ -168,8 +168,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         <Logo />
         <div className="flex flex-col mt-5 text-slate-600 dark:text-slate-300 text-sm">
           <span>
-            Discover the most outstanding articles on all topics of life. Write
-            your stories and share them
+            Khám phá các sản phẩm nội thất tốt nhất cho ngôi nhà của bạn
           </span>
 
           <div className="flex justify-between items-center mt-4">
@@ -188,11 +187,6 @@ const NavMobile: React.FC<NavMobileProps> = ({
       <ul className="flex flex-col py-6 px-2 space-y-1">
         {data.map(_renderItem)}
       </ul>
-      <div className="flex items-center justify-between py-6 px-5 space-x-2">
-        <ButtonPrimary href={"/"} className="!px-10">
-          Buy this template
-        </ButtonPrimary>
-      </div>
     </div>
   );
 };

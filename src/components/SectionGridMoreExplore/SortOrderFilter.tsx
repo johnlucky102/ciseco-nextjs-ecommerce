@@ -4,10 +4,10 @@ import { Listbox, Transition } from "@/app/headlessui";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const DEMO_DATA = [
-  { name: "Sort order" },
-  { name: "Today" },
-  { name: "Last 7 days" },
-  { name: "Last 30 days" },
+  { name: "Sắp xếp" },
+  { name: "Hôm nay" },
+  { name: "7 ngày qua" },
+  { name: "30 ngày qua" },
 ];
 
 interface Props {

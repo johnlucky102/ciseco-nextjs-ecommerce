@@ -1,4 +1,4 @@
-import rightImg from "@/images/hero-right1.png";
+﻿import rightImg from "@/images/hero-right1.png";
 import React, { FC } from "react";
 import SectionFounder from "./SectionFounder";
 import SectionStatistic from "./SectionStatistic";
@@ -17,9 +17,9 @@ const PageAbout = ({}) => {
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
         <SectionHero
           rightImg={rightImg}
-          heading="👋 About Us."
+          heading="👋 Về Chúng Tôi."
           btnText=""
-          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+          subHeading="Furzose cam kết mang đến những sản phẩm nội thất chất lượng cao, thiết kế độc đáo, giúp khách hàng tạo nên không gian sống lý tưởng cho gia đình."
         />
 
         <SectionFounder />
@@ -37,3 +37,4 @@ const PageAbout = ({}) => {
 };
 
 export default PageAbout;
+

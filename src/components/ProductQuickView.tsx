@@ -58,7 +58,7 @@ const ProductQuickView: FC<ProductQuickViewProps> = ({ className = "" }) => {
       <div>
         <label className="rtl:text-right block" htmlFor="">
           <span className="text-sm font-medium">
-            Color:
+            Màu:
             <span className="ms-1 font-semibold">
               {variants[variantActive].name}
             </span>
@@ -105,7 +105,7 @@ const ProductQuickView: FC<ProductQuickViewProps> = ({ className = "" }) => {
         <div className="flex justify-between font-medium text-sm">
           <label htmlFor="">
             <span className="">
-              Size:
+              Kích thước:
               <span className="ms-1 font-semibold">{sizeSelected}</span>
             </span>
           </label>
@@ -115,7 +115,7 @@ const ProductQuickView: FC<ProductQuickViewProps> = ({ className = "" }) => {
             href="##"
             className="text-primary-6000 hover:text-primary-500"
           >
-            See sizing chart
+            Xem bảng kích thước
           </a>
         </div>
         <div className="grid grid-cols-5 sm:grid-cols-7 gap-2 mt-2.5">
@@ -220,7 +220,7 @@ const ProductQuickView: FC<ProductQuickViewProps> = ({ className = "" }) => {
                   <span>4.9</span>
                   <span className="block mx-2">·</span>
                   <span className="text-slate-600 dark:text-slate-400 underline">
-                    142 reviews
+                    142 đánh giá
                   </span>
                 </div>
               </Link>
@@ -250,7 +250,7 @@ const ProductQuickView: FC<ProductQuickViewProps> = ({ className = "" }) => {
             onClick={notifyAddTocart}
           >
             <BagIcon className="hidden sm:inline-block w-5 h-5 mb-0.5" />
-            <span className="ms-3">Add to cart</span>
+            <span className="ms-3">Thêm vào giỏ</span>
           </ButtonPrimary>
         </div>
 
@@ -262,23 +262,17 @@ const ProductQuickView: FC<ProductQuickViewProps> = ({ className = "" }) => {
         <AccordionInfo
           data={[
             {
-              name: "Description",
+              name: "Mô tả",
               content:
-                "Fashion is a form of self-expression and autonomy at a particular period and place and in a specific context, of clothing, footwear, lifestyle, accessories, makeup, hairstyle, and body posture.",
+                "Nội thất Furzose được thiết kế tinh tế, bền đẹp và phù hợp với nhiều phong cách trang trí nội thất hiện đại.",
             },
             {
-              name: "Features",
+              name: "Đặc điểm",
               content: `<ul class="list-disc list-inside leading-7">
-            <li>Material: 43% Sorona Yarn + 57% Stretch Polyester</li>
-            <li>
-             Casual pants waist with elastic elastic inside
-            </li>
-            <li>
-              The pants are a bit tight so you always feel comfortable
-            </li>
-            <li>
-              Excool technology application 4-way stretch
-            </li>
+            <li>Chất liệu gỗ tự nhiên bền chắc</li>
+            <li>Lớp phủ chống trầy xước và chống ẩm</li>
+            <li>Thiết kế tối giản, dễ phối hợp với không gian</li>
+            <li>Bảo hành 12 tháng chính hãng</li>
           </ul>`,
             },
           ]}

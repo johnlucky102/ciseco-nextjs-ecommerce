@@ -4,21 +4,21 @@ import Avatar from "@/shared/Avatar/Avatar";
 
 const solutions = [
   {
-    name: "Eden Tuan",
-    description: "Measure actions your users take",
-    time: "3 minutes ago",
+    name: "Nguyễn Minh Quân",
+    description: "Sản phẩm của bạn đã được giao thành công",
+    time: "3 phút trước",
     href: "##",
   },
   {
-    name: "Leo Messi",
-    description: "Create your own targeted content",
-    time: "1 minute ago",
+    name: "Trần Thị Hương",
+    description: "Đơn hàng #FZ-2024 đang được xử lý",
+    time: "1 phút trước",
     href: "##",
   },
   {
-    name: "Leo Kante",
-    description: "Keep track of your growth",
-    time: "3 minutes ago",
+    name: "Lê Văn Đức",
+    description: "Sản phẩm yêu thích có khuyến mãi mới",
+    time: "5 phút trước",
     href: "##",
   },
 ];
@@ -70,7 +70,7 @@ export default function NotifyDropdown() {
               <Popover.Panel className="absolute z-10 w-screen max-w-xs sm:max-w-sm px-4 mt-3 -right-28 sm:right-0 sm:px-0">
                 <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5">
                   <div className="relative grid gap-8 bg-white dark:bg-neutral-800 p-7">
-                    <h3 className="text-xl font-semibold">Notifications</h3>
+                    <h3 className="text-xl font-semibold">Thông báo</h3>
                     {solutions.map((item, index) => (
                       <a
                         key={index}
